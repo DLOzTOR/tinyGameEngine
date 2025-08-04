@@ -12,7 +12,7 @@ import static org.lwjgl.opengl.GL11.GL_VERTEX_ARRAY;
 import static org.lwjgl.opengl.GL15.GL_STATIC_DRAW;
 //TODO: Decompose transform
 public abstract class Quad {
-    private static final VAO mesh;
+    private static final VAO QUAD_VAO;
 
     static {
         float[] meshData = {
@@ -23,8 +23,8 @@ public abstract class Quad {
         };
         FloatBuffer fb = FloatBuffer.allocate(8);
         fb.put(meshData);
-        mesh = new VAO();
-        mesh.addVBO(new VBO(fb, GL_VERTEX_ARRAY, GL_STATIC_DRAW), 2, GL_FLOAT, false, 0, 0);
+        QUAD_VAO = new VAO();
+        QUAD_VAO.addVBO(new VBO(fb, GL_VERTEX_ARRAY, GL_STATIC_DRAW), 2, GL_FLOAT, false, 0, 0);
     }
 
     private Vector2f position = new Vector2f();
@@ -49,6 +49,10 @@ public abstract class Quad {
     }
 
     public abstract void draw();
+
+    protected void bindVAO(){
+        QUAD_VAO.bind();
+    }
 
     private void calculateTransformMatrix(){
         Matrix4f transform = new Matrix4f();
