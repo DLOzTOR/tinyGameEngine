@@ -10,7 +10,7 @@ public class VAO {
 
     private final List<VBO> vbos = new ArrayList<>();
 
-    public VAO(int id) {
+    public VAO() {
         this.id = glGenVertexArrays();
     }
 
