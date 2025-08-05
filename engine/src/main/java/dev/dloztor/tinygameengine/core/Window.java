@@ -47,10 +47,13 @@ public class Window {
         freeResources();
     }
 
-    void init(){
+    private void init(){
         initGLFW();
         initWindow();
+        onInit();
     }
+
+    protected void onInit() {}
 
     private void initGLFW(){
         // Setup an error callback. The default implementation
@@ -111,7 +114,7 @@ public class Window {
         } // the stack frame is popped automatically
     }
 
-    protected void loop(){
+    private void loop(){
         // This line is critical for LWJGL's interoperation with GLFW's
         // OpenGL context, or any context that is managed externally.
         // LWJGL detects the context that is current in the current thread,
@@ -120,7 +123,7 @@ public class Window {
         GL.createCapabilities();
 
         // Set the clear color
-        clearWindow();
+        setClearWindowColor();
 
         // Run the rendering loop until the user has attempted to close
         // the window or has pressed the ESCAPE key.
@@ -128,11 +131,11 @@ public class Window {
             updateFrame();
         }
     }
-
+    //TODO: Add possibility to configure clear color
     /**
      * for override purposes
      */
-    protected void clearWindow(){
+    protected void setClearWindowColor(){
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     }
 
@@ -142,14 +145,21 @@ public class Window {
 
         glfwSwapBuffers(windowHandle); // swap the color buffers
 
+        onUpdateFrame();
+
         // Poll for window events. The key callback above will only be
         // invoked during this call.
         glfwPollEvents();
     }
 
-    protected void freeResources(){
+    protected void onUpdateFrame(){}
+
+    private void freeResources(){
         freeWindowResources();
+        onFreeResources();
     }
+
+    protected void onFreeResources() {}
 
     private void freeWindowResources(){
         // Free the window callbacks and destroy the window

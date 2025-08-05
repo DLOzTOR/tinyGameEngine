@@ -19,7 +19,7 @@ class MyWindow extends Window{
     }
 
     @Override
-    protected void clearWindow(){
+    protected void setClearWindowColor(){
         glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
     }
 }
