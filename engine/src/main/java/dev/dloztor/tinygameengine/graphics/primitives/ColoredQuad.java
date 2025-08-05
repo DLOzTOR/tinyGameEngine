@@ -25,7 +25,7 @@ public class ColoredQuad extends Quad{
         bindVAO();
         shader.bind();
         shader.setUniformVec3f("vertexColor", color);
-        glDrawArrays(GL_QUADS, 0, 4);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
         glBindVertexArray(0);
         shader.unbind();
     }

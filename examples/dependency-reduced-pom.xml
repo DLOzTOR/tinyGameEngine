@@ -24,7 +24,7 @@
         <configuration>
           <transformers>
             <transformer>
-              <Main-Class>dev.dloztor.tinygameengine.HelloWindow</Main-Class>
+              <Main-Class>dev.dloztor.tinygameengine.ColoredQuadExample</Main-Class>
             </transformer>
           </transformers>
         </configuration>

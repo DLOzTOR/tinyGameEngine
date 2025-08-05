@@ -8,9 +8,7 @@ import java.util.Scanner;
 
 public class ShaderLoader {
     public Shader loadShader(String vertexPath, String fragmentPath){
-        String vert = loadSource(vertexPath);
-        System.out.println(vert);
-        return new Shader(vert, loadSource(fragmentPath));
+        return new Shader(loadSource(vertexPath), loadSource(fragmentPath));
     }
 
     private String loadSource(String path) {
