@@ -8,11 +8,15 @@ import static org.lwjgl.opengl.GL30.*;
 import static org.lwjgl.opengl.GL30.glBindVertexArray;
 
 public class ColoredQuad extends Quad{
-    private static Shader shader = new ShaderLoader().loadShader("shaders/default/coloredquad/ColoredQuad.vert",
-            "shaders/default/coloredquad/ColoredQuad.frag");
+    private static Shader shader;
     private Vector3f color;
 
     public ColoredQuad(Vector3f color) {
+        super();
+        if(shader == null){
+            new ShaderLoader().loadShader("shaders/default/coloredquad/ColoredQuad.vert",
+                    "shaders/default/coloredquad/ColoredQuad.frag");
+        }
         this.color = color;
     }
 
