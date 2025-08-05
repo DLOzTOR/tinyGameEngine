@@ -50,7 +50,13 @@ public class Window {
     private void init(){
         initGLFW();
         initWindow();
+        initGL();
         onInit();
+    }
+
+    private void initGL() {
+        GL.createCapabilities();
+        setClearWindowColor();
     }
 
     protected void onInit() {}
@@ -91,6 +97,8 @@ public class Window {
 
         // Make the window visible
         glfwShowWindow(windowHandle);
+
+
     }
 
     private void setWindowPositionCenter(){
@@ -120,10 +128,7 @@ public class Window {
         // LWJGL detects the context that is current in the current thread,
         // creates the GLCapabilities instance and makes the OpenGL
         // bindings available for use.
-        GL.createCapabilities();
 
-        // Set the clear color
-        setClearWindowColor();
 
         // Run the rendering loop until the user has attempted to close
         // the window or has pressed the ESCAPE key.
