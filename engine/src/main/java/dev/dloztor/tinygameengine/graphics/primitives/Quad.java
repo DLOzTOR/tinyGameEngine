@@ -9,7 +9,6 @@ import org.lwjgl.BufferUtils;
 import java.nio.FloatBuffer;
 
 import static org.lwjgl.opengl.GL11.GL_FLOAT;
-import static org.lwjgl.opengl.GL11.GL_VERTEX_ARRAY;
 import static org.lwjgl.opengl.GL15.GL_ARRAY_BUFFER;
 import static org.lwjgl.opengl.GL15.GL_STATIC_DRAW;
 //TODO: Decompose transform
@@ -65,8 +64,8 @@ public abstract class Quad {
         Matrix4f transform = new Matrix4f();
         transform.set(0,0 , getScale().x);
         transform.set(1,1 , getScale().y);
-        transform.set(4, 0, getPosition().x);
-        transform.set(4, 1, getPosition().y);
+        transform.set(3, 0, getPosition().x);
+        transform.set(3, 1, getPosition().y);
         this.transform = transform;
     }
 }
