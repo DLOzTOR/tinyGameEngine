@@ -28,10 +28,10 @@ public abstract class Quad {
             float[] meshData = {
                     -0.5f, -0.5f,
                     0.5f, -0.5f,
-                    0.5f,  0.5f,
                     -0.5f,  0.5f,
+                    0.5f, -0.5f,
                     0.5f,  0.5f,
-                    -0.5f, -0.5f
+                    -0.5f,  0.5f
             };
             FloatBuffer fb = BufferUtils.createFloatBuffer(meshData.length);
             fb.put(meshData);
