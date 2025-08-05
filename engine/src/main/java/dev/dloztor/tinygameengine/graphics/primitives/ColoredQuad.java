@@ -14,7 +14,7 @@ public class ColoredQuad extends Quad{
     public ColoredQuad(Vector3f color) {
         super();
         if(shader == null){
-            new ShaderLoader().loadShader("shaders/default/coloredquad/ColoredQuad.vert",
+            shader = new ShaderLoader().loadShader("shaders/default/coloredquad/ColoredQuad.vert",
                     "shaders/default/coloredquad/ColoredQuad.frag");
         }
         this.color = color;
