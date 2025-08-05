@@ -1,6 +1,6 @@
 package dev.dloztor.tinygameengine;
 
-import dev.dloztor.tinygameengine.core.*;
+import dev.dloztor.tinygameengine.graphics.core.Window;
 
 import static org.lwjgl.opengl.GL11.glClearColor;
 
