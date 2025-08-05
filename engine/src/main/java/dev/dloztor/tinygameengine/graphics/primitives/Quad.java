@@ -4,11 +4,13 @@ import dev.dloztor.tinygameengine.graphics.core.VAO;
 import dev.dloztor.tinygameengine.graphics.core.VBO;
 import org.joml.Matrix4f;
 import org.joml.Vector2f;
+import org.lwjgl.BufferUtils;
 
 import java.nio.FloatBuffer;
 
 import static org.lwjgl.opengl.GL11.GL_FLOAT;
 import static org.lwjgl.opengl.GL11.GL_VERTEX_ARRAY;
+import static org.lwjgl.opengl.GL15.GL_ARRAY_BUFFER;
 import static org.lwjgl.opengl.GL15.GL_STATIC_DRAW;
 //TODO: Decompose transform
 public abstract class Quad {
@@ -24,15 +26,18 @@ public abstract class Quad {
     public Quad(){
         if(QUAD_VAO == null) {
             float[] meshData = {
-                    -.5f, .5f,
-                    .5f, .5f,
-                    .5f, .5f,
-                    -.5f, .5f,
+                    -0.5f, -0.5f,
+                    0.5f, -0.5f,
+                    0.5f,  0.5f,
+                    -0.5f,  0.5f,
+                    0.5f,  0.5f,
+                    -0.5f, -0.5f
             };
-            FloatBuffer fb = FloatBuffer.allocate(8);
+            FloatBuffer fb = BufferUtils.createFloatBuffer(meshData.length);
             fb.put(meshData);
+            fb.flip();
             QUAD_VAO = new VAO();
-            QUAD_VAO.addVBO(new VBO(fb, GL_VERTEX_ARRAY, GL_STATIC_DRAW), 2, GL_FLOAT, false, 0, 0);
+            QUAD_VAO.addVBO(new VBO(fb, GL_ARRAY_BUFFER, GL_STATIC_DRAW), 2, GL_FLOAT, false, 0, 0);
         }
     }
 

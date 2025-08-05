@@ -12,7 +12,7 @@ public class ColoredQuadExample {
         }
         @Override
         protected void onInit(){
-            cq = new ColoredQuad(new Vector3f(1, 1, 1));
+            cq = new ColoredQuad(new Vector3f(1, 1, 0));
         }
         @Override
         protected void onUpdateFrame(){

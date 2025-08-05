@@ -14,7 +14,7 @@ public class ColoredQuad extends Quad{
     public ColoredQuad(Vector3f color) {
         super();
         if(shader == null){
-            new ShaderLoader().loadShader("shaders/default/coloredquad/ColoredQuad.vert",
+            shader = new ShaderLoader().loadShader("shaders/default/coloredquad/ColoredQuad.vert",
                     "shaders/default/coloredquad/ColoredQuad.frag");
         }
         this.color = color;
@@ -25,7 +25,7 @@ public class ColoredQuad extends Quad{
         bindVAO();
         shader.bind();
         shader.setUniformVec3f("vertexColor", color);
-        glDrawArrays(GL_QUADS, 0, 4);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
         glBindVertexArray(0);
         shader.unbind();
     }

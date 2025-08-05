@@ -147,13 +147,10 @@ public class Window {
 
     private void updateFrame() {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the framebuffer
-
-        glfwSwapBuffers(windowHandle); // swap the color buffers
-
         onUpdateFrame();
-
         // Poll for window events. The key callback above will only be
         // invoked during this call.
+        glfwSwapBuffers(windowHandle); // swap the color buffers
         glfwPollEvents();
     }
 
