@@ -8,11 +8,14 @@ import java.util.Scanner;
 
 public class ShaderLoader {
     public Shader loadShader(String vertexPath, String fragmentPath){
-        return new Shader(loadSource(vertexPath), loadSource(fragmentPath));
+        String vert = loadSource(vertexPath);
+        System.out.println(vert);
+        return new Shader(vert, loadSource(fragmentPath));
     }
 
     private String loadSource(String path) {
-        try (InputStream input = getClass().getResourceAsStream(path);
+        ClassLoader loader = Thread.currentThread().getContextClassLoader();
+        try (InputStream input = loader.getResourceAsStream(path);
              Scanner scanner = new Scanner(input, StandardCharsets.UTF_8)) {
             return scanner.useDelimiter("\\A").next();
         } catch (Exception e) {
