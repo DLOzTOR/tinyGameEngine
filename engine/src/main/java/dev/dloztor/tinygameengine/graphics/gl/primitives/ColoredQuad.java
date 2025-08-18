@@ -1,6 +1,6 @@
-package dev.dloztor.tinygameengine.graphics.primitives;
+package dev.dloztor.tinygameengine.graphics.gl.primitives;
 
-import dev.dloztor.tinygameengine.graphics.core.Shader;
+import dev.dloztor.tinygameengine.graphics.gl.core.Shader;
 import dev.dloztor.tinygameengine.resources.loaders.ShaderLoader;
 import org.joml.Vector3f;
 

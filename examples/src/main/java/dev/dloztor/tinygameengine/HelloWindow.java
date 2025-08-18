@@ -1,6 +1,6 @@
 package dev.dloztor.tinygameengine;
 
-import dev.dloztor.tinygameengine.graphics.core.Window;
+import dev.dloztor.tinygameengine.graphics.gl.core.window.OpenGLWindow;
 
 import static org.lwjgl.opengl.GL11.glClearColor;
 
@@ -8,12 +8,12 @@ public class HelloWindow
 {
     public static void main( String[] args )
     {
-        Window window = new MyWindow(600, 400, "HelloWindow");
-        window.run();
+        OpenGLWindow window = new MyWindow(600, 400, "HelloWindow");
+        //window.run();
     }
 }
 
-class MyWindow extends Window{
+class MyWindow extends OpenGLWindow {
     public MyWindow(int width, int height, String title) {
         super(width, height, title);
     }

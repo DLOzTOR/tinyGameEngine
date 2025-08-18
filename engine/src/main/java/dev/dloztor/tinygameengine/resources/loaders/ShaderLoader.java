@@ -1,6 +1,6 @@
 package dev.dloztor.tinygameengine.resources.loaders;
 
-import dev.dloztor.tinygameengine.graphics.core.Shader;
+import dev.dloztor.tinygameengine.graphics.gl.core.Shader;
 import dev.dloztor.tinygameengine.resources.descriptors.ShaderDescriptor;
 
 import java.io.InputStream;
