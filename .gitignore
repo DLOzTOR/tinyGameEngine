@@ -44,3 +44,4 @@ build/
 /workspace.xml
 
 *.log
+logs
