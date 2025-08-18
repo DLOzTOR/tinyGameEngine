@@ -1,12 +1,14 @@
 package dev.dloztor.tinygameengine.graphics.gl.core;
 
+import dev.dloztor.tinygameengine.graphics.core.Window;
+
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.glfw.GLFW.glfwWindowShouldClose;
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL11.GL_DEPTH_BUFFER_BIT;
 
-public class OpenGLWindow extends dev.dloztor.tinygameengine.graphics.Window {
+public class OpenGLWindow extends Window {
 
     /**
      * window handle

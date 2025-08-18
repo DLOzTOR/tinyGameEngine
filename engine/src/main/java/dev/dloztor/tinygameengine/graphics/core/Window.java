@@ -1,4 +1,4 @@
-package dev.dloztor.tinygameengine.graphics;
+package dev.dloztor.tinygameengine.graphics.core;
 
 
 import dev.dloztor.tinygameengine.resources.Disposable;
