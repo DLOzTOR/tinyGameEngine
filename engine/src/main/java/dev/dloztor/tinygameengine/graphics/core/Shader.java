@@ -1,5 +1,6 @@
 package dev.dloztor.tinygameengine.graphics.core;
 
+import dev.dloztor.tinygameengine.resources.Resource;
 import org.joml.Matrix4f;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
@@ -9,7 +10,7 @@ import java.nio.FloatBuffer;
 
 import static org.lwjgl.opengl.GL30.*;
 
-public class Shader {
+public class Shader implements Resource {
     private int id;
 
     public Shader(String vertex, String fragment){
@@ -26,7 +27,7 @@ public class Shader {
         glUseProgram(0);
     }
 
-    public void delete() {
+    private void delete() {
         glDeleteProgram(id);
         id = 0;
     }
@@ -95,5 +96,10 @@ public class Shader {
         glDeleteShader(vertId);
         glDeleteShader(fragId);
         return id;
+    }
+
+    @Override
+    public void dispose() {
+        delete();
     }
 }

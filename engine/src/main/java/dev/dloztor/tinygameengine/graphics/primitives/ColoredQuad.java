@@ -1,7 +1,7 @@
 package dev.dloztor.tinygameengine.graphics.primitives;
 
 import dev.dloztor.tinygameengine.graphics.core.Shader;
-import dev.dloztor.tinygameengine.resources.ShaderLoader;
+import dev.dloztor.tinygameengine.resources.loaders.ShaderLoader;
 import org.joml.Vector3f;
 
 import static org.lwjgl.opengl.GL30.*;
@@ -14,7 +14,7 @@ public class ColoredQuad extends Quad{
     public ColoredQuad(Vector3f color) {
         super();
         if(shader == null){
-            shader = new ShaderLoader().loadShader("shaders/default/coloredquad/ColoredQuad.vert",
+            shader = new ShaderLoader().load("shaders/default/coloredquad/ColoredQuad.vert",
                     "shaders/default/coloredquad/ColoredQuad.frag");
         }
         this.color = color;

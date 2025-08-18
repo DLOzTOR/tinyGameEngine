@@ -1,14 +1,19 @@
-package dev.dloztor.tinygameengine.resources;
+package dev.dloztor.tinygameengine.resources.loaders;
 
 import dev.dloztor.tinygameengine.graphics.core.Shader;
+import dev.dloztor.tinygameengine.resources.descriptors.ShaderDescriptor;
 
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
+//TODO: Add hashtable for loaded shaders to avoid loading the same shader multiple times
+public class ShaderLoader implements ResourceLoader{
+    public Shader load(String vertexPath, String fragmentPath){
+        return load(new ShaderDescriptor(vertexPath, fragmentPath));
+    }
 
-public class ShaderLoader {
-    public Shader loadShader(String vertexPath, String fragmentPath){
-        return new Shader(loadSource(vertexPath), loadSource(fragmentPath));
+    public Shader load(ShaderDescriptor descriptor) {
+        return new Shader(loadSource(descriptor.vertexShaderPath()), loadSource(descriptor.fragmentShaderPath()));
     }
 
     private String loadSource(String path) {
