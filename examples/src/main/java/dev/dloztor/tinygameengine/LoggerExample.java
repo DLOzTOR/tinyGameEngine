@@ -1,12 +1,12 @@
 package dev.dloztor.tinygameengine;
 
-import dev.dloztor.tinygameengine.graphics.core.Window;
-import dev.dloztor.tinygameengine.graphics.primitives.ColoredQuad;
+import dev.dloztor.tinygameengine.graphics.gl.core.OpenGLWindow;
+import dev.dloztor.tinygameengine.graphics.gl.primitives.ColoredQuad;
 import org.joml.Vector3f;
 import org.slf4j.Logger;
 
 public class LoggerExample {
-    private static class MyWindow extends Window {
+    private static class MyWindow extends OpenGLWindow {
         private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(LoggerExample.class);
         ColoredQuad cq;
 

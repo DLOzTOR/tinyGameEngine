@@ -1,11 +1,11 @@
 package dev.dloztor.tinygameengine;
 
-import dev.dloztor.tinygameengine.graphics.core.Window;
-import dev.dloztor.tinygameengine.graphics.primitives.ColoredQuad;
+import dev.dloztor.tinygameengine.graphics.gl.core.OpenGLWindow;
+import dev.dloztor.tinygameengine.graphics.gl.primitives.ColoredQuad;
 import org.joml.Vector3f;
 
 public class ColoredQuadExample {
-    private static class MyWindow extends Window {
+    private static class MyWindow extends OpenGLWindow {
         ColoredQuad cq;
         public MyWindow(int width, int height, String title) {
             super(width, height, title);

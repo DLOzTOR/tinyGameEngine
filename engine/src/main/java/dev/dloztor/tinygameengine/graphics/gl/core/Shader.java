@@ -1,4 +1,4 @@
-package dev.dloztor.tinygameengine.graphics.core;
+package dev.dloztor.tinygameengine.graphics.gl.core;
 
 import dev.dloztor.tinygameengine.resources.Resource;
 import org.joml.Matrix4f;

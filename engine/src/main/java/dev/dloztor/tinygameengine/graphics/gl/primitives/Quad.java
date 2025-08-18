@@ -1,7 +1,7 @@
-package dev.dloztor.tinygameengine.graphics.primitives;
+package dev.dloztor.tinygameengine.graphics.gl.primitives;
 
-import dev.dloztor.tinygameengine.graphics.core.VAO;
-import dev.dloztor.tinygameengine.graphics.core.VBO;
+import dev.dloztor.tinygameengine.graphics.gl.core.VAO;
+import dev.dloztor.tinygameengine.graphics.gl.core.VBO;
 import org.joml.Matrix4f;
 import org.joml.Vector2f;
 import org.lwjgl.BufferUtils;
