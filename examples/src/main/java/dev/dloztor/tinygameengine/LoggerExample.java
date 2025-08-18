@@ -27,6 +27,6 @@ public class LoggerExample {
     }
 
     public static void main(String[] args) {
-        new MyWindow(400, 400, "Logger showcase(See log folder)").run();
+        //new MyWindow(400, 400, "Logger showcase(See log folder)").run();
     }
 }

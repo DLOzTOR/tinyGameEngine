@@ -21,6 +21,6 @@ public class ColoredQuadExample {
     }
 
     public static void main(String[] args) {
-        new MyWindow(400, 400, "Colored quad showcase").run();
+        //new MyWindow(400, 400, "Colored quad showcase").run();
     }
 }

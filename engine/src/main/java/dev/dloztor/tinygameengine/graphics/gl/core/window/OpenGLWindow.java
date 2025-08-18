@@ -25,20 +25,10 @@ public class OpenGLWindow extends Window {
      */
     private final int initialHeight;
 
-    private final String title;
-
     public OpenGLWindow(int width, int height, String title) {
         super(title);
         this.initialWidth = width;
         this.initialHeight = height;
-        this.title = title;
-    }
-
-
-    public void run(){
-        init();
-        loop();
-        freeResources();
     }
 
     @Override
@@ -51,22 +41,6 @@ public class OpenGLWindow extends Window {
 
     protected void onInit() {/*default implementation ignored*/}
 
-
-
-    private void loop(){
-        // This line is critical for LWJGL's interoperation with GLFW's
-        // OpenGL context, or any context that is managed externally.
-        // LWJGL detects the context that is current in the current thread,
-        // creates the GLCapabilities instance and makes the OpenGL
-        // bindings available for use.
-
-
-        // Run the rendering loop until the user has attempted to close
-        // the window or has pressed the ESCAPE key.
-        while (!glfwWindowShouldClose(windowHandle)){
-            updateFrame();
-        }
-    }
     //TODO: Add possibility to configure clear color
     /**
      * for override purposes

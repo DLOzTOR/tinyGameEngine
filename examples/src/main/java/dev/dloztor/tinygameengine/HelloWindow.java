@@ -9,7 +9,7 @@ public class HelloWindow
     public static void main( String[] args )
     {
         OpenGLWindow window = new MyWindow(600, 400, "HelloWindow");
-        window.run();
+        //window.run();
     }
 }
 
