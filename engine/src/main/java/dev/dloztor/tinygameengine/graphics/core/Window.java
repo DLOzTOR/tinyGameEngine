@@ -59,7 +59,7 @@ public class Window {
         setClearWindowColor();
     }
 
-    protected void onInit() {}
+    protected void onInit() {/*default implementation ignored*/}
 
     private void initGLFW(){
         // Setup an error callback. The default implementation
@@ -154,14 +154,14 @@ public class Window {
         glfwPollEvents();
     }
 
-    protected void onUpdateFrame(){}
+    protected void onUpdateFrame(){/*default implementation ignored*/}
 
     private void freeResources(){
         freeWindowResources();
         onFreeResources();
     }
 
-    protected void onFreeResources() {}
+    protected void onFreeResources() {/*default implementation ignored*/}
 
     private void freeWindowResources(){
         // Free the window callbacks and destroy the window
