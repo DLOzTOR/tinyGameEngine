@@ -1,6 +1,6 @@
 package dev.dloztor.tinygameengine;
 
-import dev.dloztor.tinygameengine.graphics.gl.core.OpenGLWindow;
+import dev.dloztor.tinygameengine.graphics.gl.core.window.OpenGLWindow;
 import dev.dloztor.tinygameengine.graphics.gl.primitives.ColoredQuad;
 import org.joml.Vector3f;
 

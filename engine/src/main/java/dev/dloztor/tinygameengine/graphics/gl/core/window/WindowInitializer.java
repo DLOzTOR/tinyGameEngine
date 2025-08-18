@@ -1,4 +1,4 @@
-package dev.dloztor.tinygameengine.graphics.gl.core;
+package dev.dloztor.tinygameengine.graphics.gl.core.window;
 
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.glfw.GLFWVidMode;

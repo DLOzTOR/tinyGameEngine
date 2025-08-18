@@ -1,4 +1,4 @@
-package dev.dloztor.tinygameengine.graphics.gl.core;
+package dev.dloztor.tinygameengine.graphics.gl.core.window;
 
 import dev.dloztor.tinygameengine.graphics.core.Window;
 
